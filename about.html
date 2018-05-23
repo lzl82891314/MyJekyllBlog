@@ -1,0 +1,121 @@
+---
+layout: page
+title: "About"
+description: "Hey, this is Dunbreak's blog"
+header-img: "img/post-bg-rwd.jpg"
+---
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+
+    <!--copied from markdown -->
+    <blockquote><p>越努力，越幸运</p></blockquote>
+
+    <p>大家好，我是<strong>Dunbreak</strong>，一名坚持在.Net平台的小码农，毕业三年，目前在北京工作，仍然属于不停学习的阶段。</p>
+
+    <p>生活中是个大胖子，目前正在减肥。希望成功之后可以把这段话改为“曾经是个胖子^_^”</p>
+
+    <P>这个博客是为了记录我每天的学习、成长经历搭建的，希望日后看到曾经这么努力的自己会感到高兴。</P>
+
+    <p>PS：此博客是我通过学习 <a href="https://github.com/qiubaiying/qiubaiying.github.io/wiki/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B"><strong>柏荧</strong></a> 同学的博客在自己的CentOS服务器使用jekyll搭建的，没有他的源码我什么也做不了，在此感谢柏荧同学。</p>
+
+    <p></p>
+    
+    <h5>Talks</h5>
+
+    <ul>
+        <li><a href="https://github.com">GitHub</a></li>
+        <li><a href="http://jekyll.com.cn/">jekyll</a></li>
+        <li><a href="http://huangxuan.me/">Hux</a></li> 
+        <li><a href="https://analytics.google.com/analytics">Google Analytics</a></li>
+    </ul>
+</div>
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+<!-- Gitalk 评论 start  -->
+{% if site.gitalk.enable %}
+<!-- Gitalk link  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+    <script type="text/javascript">
+    var gitalk = new Gitalk({
+    clientID: '{{site.gitalk.clientID}}',
+    clientSecret: '{{site.gitalk.clientSecret}}',
+    repo: '{{site.gitalk.repo}}',
+    owner: '{{site.gitalk.owner}}',
+    admin: ['{{site.gitalk.admin}}'],
+    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
+    id: 'about',
+    });
+    gitalk.render('gitalk-container');
+</script>
+{% endif %}
+<!-- Gitalk end -->
+
+ <!-- disqus 评论框 start  -->
+{% if site.disqus.enable %}
+
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus.username}}";
+    var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}
+
