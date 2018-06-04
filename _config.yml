@@ -4,10 +4,12 @@ SEOTitle: Dunbreak | Dun Blog
 header-img: img/post-bg-desk.jpg
 email: lzl82891314@163.com
 description: "所有一触即发的怒火与狂妄都来自于一颗脆弱自卑的心。"
-keyword: "Dunbreak, Dunbreak Blog, lzl, 李正龙, .Net, C#"
+keyword: "Dunbreak, Dunbreak Blog, .Net, C#"
 url: "http://www.dunbreak.cn"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/lzl82891314/MyJekyllBlog.git" # you code repository
+github_username: lzl82891314
+github_reponame: MyJekyllBlog
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -39,10 +41,11 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-plugins: [jekyll-paginate]
-
-
-
+#plugins: [jekyll-paginate]
+#plugins: [jekyll-sitemap]
+plugins: 
+  -  jekyll-paginate
+  -  jekyll-sitemap
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -61,12 +64,12 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: false    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  enable: true    #是否开启Gitalk评论
+  clientID: 9da3b62498ac92d339ac                            #生成的clientID
+  clientSecret: a6cf5776e0c0ea5e520a9c29868f6e1c93f42ea1    #生成的clientSecret
+  repo: MyJekyllBlog    #仓库名称
+  owner: lzl82891314    #github用户名
+  admin: lzl82891314
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
