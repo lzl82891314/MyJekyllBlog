@@ -52,13 +52,22 @@ layout: default
     <div class="container">
         <div class="row">
 
-    <!-- Post Container -->
+            <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
 
 				{{ content }}
+
+                <hr style="visibility: hidden;">
+
+                <!--分享插件START-->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                <div class="share-component" data-sites="weibo,qq,wechat,qzone,douban,twitter,facebook" data-wechat-qrcode-helper="微信扫一下二维码便可分享至朋友圈">
+                </div>
+                <!--分享插件END-->
 
                 <hr style="visibility: hidden;">
 
@@ -80,8 +89,7 @@ layout: default
                     </li>
                     {% endif %}
                 </ul>
-
-
+                
                 <!--Gitalk评论start  -->
                 {% if site.gitalk.enable %}
                 <!-- 引入Gitalk评论插件  -->
