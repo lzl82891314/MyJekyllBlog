@@ -116,3 +116,4 @@ UpgradeLog*.XML
 !*.ide-wal
 *.pubxml
 _site
+Gemfile.lock
