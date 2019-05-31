@@ -1,14 +1,14 @@
 {
-    "name": "by-blog",
-    "title": "BY Blog",
-    "author": "BY <qiubaiyingios@163.com>",
+    "name": "dunbreak",
+    "title": "Dunbreak's Blog",
+    "author": "Dunbreak <lzl82891314@163.com>",
     "version": "1.7.0",
-    "homepage": "http://qiubaiying.github.io",
+    "homepage": "https://www.dunbreak.cn",
     "repository": {
         "type": "git",
-        "url": "https://github.com/qiubaiying/qiubaiying.github.io"
+        "url": "https://github.com/lzl82891314/MyJekyllBlog"
     },
-    "bugs": "https://github.com/qiubaiying/qiubaiying.github.io/issues",
+    "bugs": "https://github.com/lzl82891314/MyJekyllBlog/issues",
     "devDependencies": {
         "grunt": "~0.4.5",
         "grunt-contrib-less": "~0.11.4",
@@ -23,6 +23,7 @@
         "py3wa"  : "grunt watch & npm run py3view & jekyll serve -w",
         "boil"   : "git push boilerplate boilerplate:master",
         "push"   : "git push origin master --tag",
-        "cafe"   : "git co gitcafe-pages; git merge master; git push gitcafe gitcafe-pages:gitcafe-pages --tag; git co master;"
+        "cafe"   : "git co gitcafe-pages; git merge master; git push gitcafe gitcafe-pages:gitcafe-pages --tag; git co master;",
+        "dockerrun": "docker run -p 4000:4000 -d "
     }
 }
